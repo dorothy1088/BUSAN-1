@@ -175,28 +175,85 @@ on
 -- from 기준으로 없는 건 null로 가지고 오는 건 같은 거 가지고 옴 
 
 
+select
+	m.name as 회원명,
+	count(o.id) as 주문건수,
+	sum(o.amount) as 총구매액
+from
+	members m
+left join
+	orders o
+on
+	m.id = o.member_id
+group by
+	m.id, m.name;
+
+select
+	m.name as 회원명,
+	count(o.id) as 주문건수,
+	coalesce(sum(o.amount), 0) as 총구매액 # null대신에 0이 등록
+from
+	members m
+left join
+	orders o
+on
+	m.id = o.member_id
+group by
+	m.id, m.name;
+
+select
+	*
+from
+	members m
+left join
+	dept d
+on
+m.dept_id = d.id
+left join
+	orders o
+on
+	m.id=o.member_id; 
+# 멤버가 기준 회원아이디 99 있는 거 들어가 
+
+select
+	*
+from
+	members m
+cross join
+	orders o; 
+
+
+select count(*) 
+	*
+from
+	members m
+cross join
+	orders o; 
+
+desc orders ; 
+alter table orders add column created_at datetime default now();
+
+select 
+	dates.work_date,
+	d.name,
+	count(o.id) as 주문건수
+from (
+	select date('2026-09-07') as work_date
+	union all select date('2026-09-08')
+	union all select date('2026-09-09')
+	) as dates
+cross join
+	dept d
+left join 
+	orders o
+on 
+	date(o.created_at)=dates.work_date
+group by 
+	dates.work_date, d.id, d.name ; 
 
 
 
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+select date('2026-09-07') as work_date
 
 
 
