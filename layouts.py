@@ -136,6 +136,19 @@ result_area = st.container(border=True)
 result_area.subheader('분석결과')
 result_area.metric(label='분석결과', value='평균 매출: 1,250')
 
+result_area.markdown(
+    """
+    <div>
+        <div style="font-size: 16px;">분석결과</div>
+        <div style="font-size: 20px; font-weight: 600;background-color: pink;">
+            평균 매출: 1,250
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
 with st.expander('자세히 보기'):
     st.write('Super Ultra Mega Alpha detailed description')
 
