@@ -1,3 +1,7 @@
+
+# MVP :minimum variable product
+
+# streamlit 에서 텍스트를 사용하는 방법
 """
 title
 subtitle
