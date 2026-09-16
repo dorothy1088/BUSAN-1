@@ -10,6 +10,8 @@ data= pd.DataFrame({
     '수입횟수': range(1,51),
 })
 
+# range()의 끝 숫자는 항상 빠진다.
+
 display_df = data[
     [
         '입출항횟수',
@@ -19,6 +21,9 @@ display_df = data[
 ]
 
 st.dataframe(data, height=300)
+# height=300	표의 세로 크기	↕ 세로 스크롤
+# width=500	표의 가로 크기	↔ 가로 스크롤
+# 500이든 300이든 픽셀의 크기일 뿐이다.
 
 products = pd.DataFrame({
         '상품': [
