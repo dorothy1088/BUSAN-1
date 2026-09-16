@@ -26,7 +26,7 @@ data = pd.DataFrame({
     ]
 })
 st.dataframe(data)
-
+#hide_index=True
 
 st.write('A')
 st.write('B')
@@ -47,6 +47,7 @@ with col2:
     st.write('가운데')
 with col3:
     st.write('오른쪽')
+
 sales_kpi, orders_kpi, customers_kpi = st.columns(3)
 with sales_kpi:
     st.metric(
@@ -92,6 +93,31 @@ with right:
     st.write('해당 영역은 상대적으로 좁게 표시됩니다.')
 
 #col1, col2, col3 = st.columns([2,1,3])
+
+#col1, col2, col3 = st.columns([2,1,3])
+
+#with col1:
+#	st.subheader('얌얌')
+#	st.metric(
+#       label='얌얌 수',
+#       value='874명')
+#	st.write('해당 영역은 얌얌하게 적당하게 표시됩니다.')
+
+#with col2:
+#	st.subheader('냠냠')
+#	st.metric(
+#       label='냠냠 수',
+#       value='74명')
+#	st.write('해당 영역은 냠냠하게 좁게 표시됩니다.')
+
+#with col3:
+#	st.subheader('욤욤')
+#	st.metric(
+#       label='욤욤 수',
+#       value='4명')
+#	st.write('해당 영역은 욤욤하게 넓게 표시됩니다.')
+
+
 
 st.write('컨테이너 밖')
 # border로 묶을 수 있음
