@@ -36,6 +36,11 @@ average_sales=sales_df['매출'].mean()
 max_product = sales_df.loc[
     sales_df['매출'].idxmax(),
     '상품']
+# idxmax() = "가장 큰 값이 어디 있는지(행 번호)를 알려줘"
+# .loc[행, 열] = "그 행의 이 열을 가져와줘"
+# 그중 가장 큰 매출이 있는 행 번호를 찾는다 sales_df['매출'].idxmax()
+# 3번 행의 상품을 가져온다 sales_df.loc[3, '상품']
+# 그 결과를 max_product에 저장한다
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric(
